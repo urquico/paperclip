@@ -1,20 +1,5 @@
+import { type PaperClipHistory, type PaperclipStore } from '@/lib/types';
 import { defineStore } from 'pinia';
-
-type PaperClipHistory = {
-  paperclip: number;
-  wire: number;
-  timestamp: Date;
-};
-
-type PaperclipStore = {
-  wire: number;
-  wireCost: number;
-  paperclip: number;
-  paperclipPrice: number;
-  paperclipHistory: PaperClipHistory[];
-  autoClippers: number;
-  autoClipperCost: number;
-};
 
 export const usePaperclipStore = defineStore('paperclip', {
   state: () => {
