@@ -79,10 +79,5 @@ export const usePaperclipStore = defineStore('paperclip', {
     buyAutoClippers: function (this: { autoClippers: number }) {
       this.autoClippers += 1;
     },
-
-    flushHistory: function (this: { paperclipHistory: PaperClipHistory[] }) {
-      // flushes the paperclipHistory array
-      this.paperclipHistory = [];
-    },
   },
 });
