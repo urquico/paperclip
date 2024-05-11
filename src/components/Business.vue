@@ -12,19 +12,8 @@ import {
 } from '@/components/ui/card';
 import { usePaperclipStore } from '@/store/paperclip';
 import { MinusCircle, PlusCircle } from 'lucide-vue-next';
-import { watchEffect } from 'vue';
 
 const paperclip = usePaperclipStore();
-
-watchEffect(() => {
-  const interval = setInterval(() => {
-    if (paperclip.unsoldInventory !== 0) {
-      paperclip.sellPaperclip();
-    }
-  }, 1000);
-
-  return () => clearInterval(interval);
-});
 </script>
 
 <template>

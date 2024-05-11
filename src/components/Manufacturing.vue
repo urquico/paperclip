@@ -11,27 +11,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { usePaperclipStore } from '@/store/paperclip';
-import { watchEffect } from 'vue';
 
 const paperclip = usePaperclipStore();
-
-watchEffect(() => {
-  const interval = setInterval(() => {
-    if (paperclip.clipsPerSecond !== 0) {
-      paperclip.flushPaperclipHistory();
-    }
-  }, 1000);
-
-  return () => clearInterval(interval);
-});
-
-watchEffect(() => {
-  const interval = setInterval(() => {
-    paperclip.randomizeWireCost();
-  }, 1000);
-
-  return () => clearInterval(interval);
-});
 </script>
 
 <template>

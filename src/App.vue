@@ -14,6 +14,15 @@ const paperclip = usePaperclipStore();
 watchEffect(() => {
   const interval = setInterval(() => {
     paperclip.buyPaperclips(paperclip.autoClippers);
+    paperclip.randomizeWireCost();
+
+    if (paperclip.clipsPerSecond !== 0) {
+      paperclip.flushPaperclipHistory();
+    }
+
+    if (paperclip.unsoldInventory !== 0) {
+      paperclip.sellPaperclip();
+    }
   }, 1000);
 
   return () => clearInterval(interval);
