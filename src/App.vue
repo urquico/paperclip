@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { watchEffect } from 'vue';
 
+import Business from './components/Business.vue';
+import CustomContainer from './components/CustomContainer.vue';
 import Manufacturing from './components/Manufacturing.vue';
 import Paperclip from './components/Paperclip.vue';
 import TitleHeader from './components/TitleHeader.vue';
@@ -27,8 +29,13 @@ watchEffect(() => {
     <!-- Paperclip -->
     <Paperclip />
 
-    <!-- Manufacturing -->
-    <Manufacturing />
+    <CustomContainer class="flex gap-2">
+      <!-- Business -->
+      <Business />
+
+      <!-- Manufacturing -->
+      <Manufacturing />
+    </CustomContainer>
 
     <!-- {{ JSON.stringify(paperclip.paperclipHistory) }} -->
     <!-- {{ JSON.stringify(paperclip.wire) }} -->

@@ -8,8 +8,11 @@ export type PaperclipStore = {
   wire: number;
   wireCost: number;
   paperclip: number;
+  unsoldInventory: number;
   paperclipPrice: number;
   paperclipHistory: PaperClipHistory[];
   autoClippers: number;
   autoClipperCost: number;
+  funds: number;
+  demand: number;
 };
