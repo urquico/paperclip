@@ -26,7 +26,11 @@ const paperclip = usePaperclipStore();
       </CardHeader>
       <CardContent class="flex flex-col gap-2">
         <div class="flex gap-2">
-          <Button @click="paperclip.buyWire">Buy Wire</Button>
+          <Button
+            @click="paperclip.buyWire"
+            :disabled="paperclip.funds < paperclip.wireCost"
+            >Buy Wire</Button
+          >
 
           <Badge variant="outline" class="max-md:p-3">
             {{ paperclip.wire }} Inches
