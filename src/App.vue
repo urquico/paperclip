@@ -10,7 +10,7 @@ import { usePaperclipStore } from './store/paperclip';
 
 const paperclip = usePaperclipStore();
 
-// every 1 second, trigger paperclip.buyPaperclips
+// every 1 second
 watchEffect(() => {
   const interval = setInterval(() => {
     paperclip.buyPaperclips(paperclip.autoClippers);
@@ -29,7 +29,6 @@ watchEffect(() => {
 });
 </script>
 
-<!-- TODO: Refactor the code, make components from it. -->
 <template>
   <main class="w-screen h-screen flex flex-col gap-2 mt-4 items-center">
     <!-- Title Header -->
@@ -45,8 +44,5 @@ watchEffect(() => {
       <!-- Manufacturing -->
       <Manufacturing />
     </CustomContainer>
-
-    <!-- {{ JSON.stringify(paperclip.paperclipHistory) }} -->
-    <!-- {{ JSON.stringify(paperclip.wire) }} -->
   </main>
 </template>
