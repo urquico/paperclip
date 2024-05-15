@@ -26,10 +26,14 @@ const paperclip = usePaperclipStore();
       </CardHeader>
       <CardContent class="flex flex-col gap-2">
         <div class="flex gap-2">
-          <Button @click="paperclip.buyWire">Buy Wire</Button>
+          <Button
+            @click="paperclip.buyWire"
+            :disabled="paperclip.funds < paperclip.wireCost"
+            >Buy Wire</Button
+          >
 
           <Badge variant="outline" class="max-md:p-3">
-            {{ paperclip.wire }}
+            {{ paperclip.wire }} Inches
           </Badge>
         </div>
 
@@ -39,9 +43,13 @@ const paperclip = usePaperclipStore();
           </Badge>
         </div>
       </CardContent>
-      <CardFooter class="gap-2">
+      <CardFooter class="gap-2" v-if="paperclip.paperclip >= 50">
         <div class="flex gap-2">
-          <Button @click="paperclip.buyAutoClippers">Buy Auto-Clippers</Button>
+          <Button
+            @click="paperclip.buyAutoClippers"
+            :disabled="paperclip.funds < paperclip.autoClipperCost"
+            >Buy Auto-Clippers</Button
+          >
 
           <Badge variant="outline" class="max-md:p-3">
             {{ paperclip.autoClippers }}
